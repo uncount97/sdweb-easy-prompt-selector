@@ -68,12 +68,12 @@ class InteractiveTagSelector {
         <div class="gr-block gr-box relative w-full border-solid border border-gray-200">
           <div class="flex flex-row flex-wrap w-full gap-2" style="align-items: center;">
             <select id="${this.SELECT_ID}" class="gr-box gr-input w-full" style="min-width: min(400px, 100%); flex: 3;">
-              <option>なし</option>
+              <option>Nothing</option>
             </select>
             <div style="min-width: min(200px, 100%); flex: 1">
               <label class="flex items-center text-gray-700 text-sm space-x-2 rounded-lg cursor-pointer dark:bg-transparent">
                 <input type="checkbox" id="${this.TO_NEGATIVE_PROMPT_ID}" class="gr-check-radio gr-checkbox">
-                <span class="ml-2">ネガティブプロンプトに入力</span>
+                <span class="ml-2">Add to Neg-Prompt</span>
               </label>
             </div>
           </div>
