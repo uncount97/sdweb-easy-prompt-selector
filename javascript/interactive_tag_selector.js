@@ -161,7 +161,7 @@ onUiLoaded(async () => {
   const tags = await interactiveTagSelector.parseFiles()
 
   const button = document.createElement('button')
-  button.textContent = '🔯タグを選択'
+  button.textContent = '🔯Pick Tag'
   button.classList.add('gr-button', 'gr-button-sm', 'gr-button-secondary')
   button.style = 'margin-top: 0.5rem;'
 
