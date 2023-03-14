@@ -129,9 +129,20 @@ class InteractiveTagSelector {
   addTag(tag) {
     const id = this.toNegative ? 'txt2img_neg_prompt' : 'txt2img_prompt'
     const textarea = gradioApp().getElementById(id).querySelector('textarea')
+    const prompt_area = gradioApp().getElementById("txt2img_prompt").querySelector('textarea')
+    const net_prompt_area = gradioApp().getElementById("txt2img_neg_prompt").querySelector('textarea')
 
-    if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
-    textarea.value += tag
+    //Check if a tag starts with "neg-", remove this "neg-", then add it to neg-prompt. 
+    //There is no need to ask user click a checkbox manually
+    //Also, 
+    if (tag.startsWith("neg-")) {
+      if (net_prompt_area.value.trim() !== '' && net_prompt_area.value.trim().slice(-1) !== ',') { net_prompt_area.value += ', ' }
+      net_prompt_area.value += tag.substring(4);
+    } else {
+      if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
+      textarea.value += tag
+    }
+
 
     updateInput(textarea)
   }
