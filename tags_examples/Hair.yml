@@ -54,30 +54,30 @@ Style:
     braid: braid
     half_updo: half updo
     one_side_up: one side up
-    ツーサイドアップ: two side up
-    マルチタイヘアー: multi-tied hair
-    頭頂部結び: topknot
-    巻き毛: curly hair
-    縦ロール: drill hair
-    ツイン縦ロール: twin drills
-    リングレット: ringlets
-    弓型髪: bow-shaped hair
-    お団子頭: hair bun
-    輪っか髪: hair rings
-    ドレッドヘア: dreadlocks
+    two_side_up: two side up
+    multi_tied_hair: multi-tied hair
+    topknot: topknot
+    curly_hair: curly hair
+    drill_hair: drill hair
+    twin_drills: twin drills
+    ringlets: ringlets
+    bow_shaped_hair: bow-shaped hair
+    hair_bun: hair bun
+    hair_rings: hair rings
+    dreadlocks: dreadlocks
 
 Bang:
-  パッツン: blunt bangs
-  非対称: asymmetrical bangs
-  両目隠れ:  hair over eyes
-  片目隠れ: hair over one eye
-  センター分け: parted bangs
-  センター分け(ゆるめ): swept bangs
-  目の間: hair between eyes
-  インテーク: hair intakes
-  触角: sidelocks
+  blunt: blunt bangs
+  asymmetrical: asymmetrical bangs
+  hair_over_eyes:  hair over eyes
+  hair_over_one_eye: hair over one eye
+  parted_bangs: parted bangs
+  swept_bangs: swept bangs
+  hair_between_eyes: hair between eyes
+  hair_intakes: hair intakes
+  sidelocks: sidelocks
 
 Other:
-  横髪: hair flaps
-  アホ毛: ahoge
-  アンテナ: antenna hair
+  hair_flaps: hair flaps
+  ahoge: ahoge
+  antenna_hair: antenna hair
