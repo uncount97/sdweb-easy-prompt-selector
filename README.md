@@ -23,13 +23,27 @@ Format is simple, each tag line is just key and value. If key is the same as val
 # Tag Folder
 Normally, your own tag files should put in `tags` folder. If there is no `.yml` file in tags folder, extension will copy build-in example templates into `tags` folder.  
 
+# Wildcard
+In above screenshot, there are category buttons with orange color. Click one of these button, it will add wildcard to prompt. Which will pick 1 tag from this category randomly when generating.  
+
+
+# New Features in this Fork
+## "neg-" prefix
+In this fork, I add a feature as "If a tag is start with `neg-`, then put this tag into negative prompt, and remove this `neg-` prefix. ". So you don't need to check "Add tag to Neg Prompt"  manually.  
+
+For example, for tag value "neg-child loli", it will be put into negative prompt as "child loli".  
+
+## Click again to remove tag
+Click a tag again, it will search this tag in prompt and remove it. Works on prompt, neg-prompt and "neg-" prefixed tag.  
+
+
+## BUg fixing
+* Tell python side after editing prompt, otherwise python won't know it.  
+* Change `Script` function parameter from `Script` to `scripts.Script`, which has a name conflict issue hiding there.  
 
 # Tip
 * Tag value doesn't need to be just 1 or 2 words. You can set a whole prompt to 1 tag, then use this tag as a template.  
 
-* In this fork, I add a feature as "If a tag is start with `neg-`, then put this tag into negative prompt, and remove this `neg-` prefix. ". So you don't need to check "Add tag to Neg Prompt"  manually.  
-
-For example, for tag value "neg-child loli", it will be put into negative prompt as "child loli".  
 
 # FYI
 Credit goes to this extension's creator, who don't want to translate this good extension into English. So, I have to fork it to do this.   
