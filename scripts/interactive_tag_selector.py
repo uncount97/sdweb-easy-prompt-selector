@@ -3,10 +3,10 @@ import random
 import re
 import yaml
 
-from modules.scripts import Script, AlwaysVisible, basedir
+import modules.scripts as scripts
 
 FILE_DIR = Path().absolute()
-BASE_DIR = Path(basedir())
+BASE_DIR = Path(scripts.basedir())
 TAGS_DIR = BASE_DIR.joinpath('tags')
 
 def tag_files():
@@ -55,7 +55,7 @@ def replace_template(tags, prompt):
 
     return prompt
 
-class Script(Script):
+class Script(scripts.Script):
     tags = {}
 
     def __init__(self) -> None:
@@ -66,7 +66,7 @@ class Script(Script):
         return "Interactive Tag Selector"
 
     def show(self, is_img2img)-> bool|object:
-        return AlwaysVisible
+        return scripts.AlwaysVisible
 
     def ui(self, is_img2img):
         return None

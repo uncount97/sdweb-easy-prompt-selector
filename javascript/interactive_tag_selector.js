@@ -136,15 +136,42 @@ class InteractiveTagSelector {
     //There is no need to ask user click a checkbox manually
     //Also, 
     if (tag.startsWith("neg-")) {
-      if (net_prompt_area.value.trim() !== '' && net_prompt_area.value.trim().slice(-1) !== ',') { net_prompt_area.value += ', ' }
-      net_prompt_area.value += tag.substring(4);
+      let neg_tag = tag.substring(4);
+      //check if it is already in prompt
+      if (net_prompt_area.value.indexOf(", "+neg_tag)>=0) {
+        // remove from prompt
+        net_prompt_area.value = net_prompt_area.value.replace(", "+neg_tag, "");
+      } else if(net_prompt_area.value.indexOf(neg_tag)==0) {
+        net_prompt_area.value = net_prompt_area.value.replace(neg_tag, "");
+      } else {
+        // add to prompt
+        if (net_prompt_area.value.trim() !== '' && net_prompt_area.value.trim().slice(-1) !== ',') { net_prompt_area.value += ', ' }
+        net_prompt_area.value += neg_tag;
+      }
+
+      //trigger
+      net_prompt_area.dispatchEvent(new Event("input"));
+
     } else {
-      if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
-      textarea.value += tag
+      //check if it is already in prompt
+      if (textarea.value.indexOf(", "+tag)>=0) {
+        // remove from prompt
+        textarea.value = textarea.value.replace(", "+tag, "");
+      } else if (textarea.value.indexOf(tag)==0) {
+        // remove from prompt
+        textarea.value = textarea.value.replace(tag, "");
+      } else {
+        // add to prompt
+        if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
+        textarea.value += tag
+      }
+
+      //trigger
+      textarea.dispatchEvent(new Event("input"));
+
+
     }
 
-
-    updateInput(textarea)
   }
 
   async parseFiles() {
