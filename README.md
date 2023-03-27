@@ -26,15 +26,21 @@ Normally, your own tag files should put in `tags` folder. If there is no `.yml` 
 # Wildcard
 In above screenshot, there are category buttons with orange color. Click one of these button, it will add wildcard to prompt. Which will pick 1 tag from this category randomly when generating.  
 
+# Right Click To Remove Tag
+You can right click a tag to remove it.  
+
+# Works both on gradio 3.23.0 and 3.16.2
+There is version checking in it, works for both version of gradio.  
 
 # New Features in this Fork
 ## "neg-" prefix
 In this fork, I add a feature as "If a tag is start with `neg-`, then put this tag into negative prompt, and remove this `neg-` prefix. ". So you don't need to check "Add tag to Neg Prompt"  manually.  
-
 For example, for tag value "neg-child loli", it will be put into negative prompt as "child loli".  
 
 ## Click again to remove tag
 Click a tag again, it will search this tag in prompt and remove it. Works on prompt, neg-prompt and "neg-" prefixed tag.  
+
+Yes, there is already a right click to remove tag function. But you can not do right clicking on touch screen. So, this one is still needed.  
 
 
 ## BUg fixing
