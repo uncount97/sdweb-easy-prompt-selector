@@ -164,7 +164,6 @@ Light:
   - interior light
 
 Env:
-  - studio
   - street
   - indoor
   - car
