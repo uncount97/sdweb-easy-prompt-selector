@@ -100,9 +100,9 @@ Humanoid:
 Pose:
   - standing
   - sitting
-  - sexy
-  - seductive
-  - sensual
+  - sexy pose
+  - seductive pose
+  - sensual pose
 
 Style:
   - cute
