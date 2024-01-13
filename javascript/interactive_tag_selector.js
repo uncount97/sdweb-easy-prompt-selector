@@ -290,17 +290,19 @@ class InteractiveTagSelector {
       net_prompt_area.dispatchEvent(new Event("input"));
 
     } else {
-      //check if it is already in prompt
-      if (textarea.value.indexOf(", "+tag)>=0) {
-        // remove from prompt
-        textarea.value = textarea.value.replace(", "+tag, "");
-      } else if (textarea.value.indexOf(tag)==0) {
-        // remove from prompt
-        textarea.value = textarea.value.replace(tag, "");
-      } else {
-        // add to prompt
-        if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
-        textarea.value += tag
+    //   //check if it is already in prompt
+    //   if (textarea.value.indexOf(", "+tag)>=0) {
+    //     // remove from prompt
+    //     textarea.value = textarea.value.replace(", "+tag, "");
+    //   } else if (textarea.value.indexOf(tag)==0) {
+    //     // remove from prompt
+    //     textarea.value = textarea.value.replace(tag, "");
+    //   } else {
+    //     // add to prompt
+    //     if (textarea.value.trim() !== '' && textarea.value.trim().slice(-1) !== ',') { textarea.value += ', ' }
+    //     textarea.value += tag
+        myTag += tag;
+        this.InsertTag(textarea, myTag);
       }
 
       //trigger
@@ -310,6 +312,34 @@ class InteractiveTagSelector {
     }
 
   }
+
+    InsertTag(elme, inputText) {
+        var caretPos = 0;
+        const net_prompt_area = gradioApp().getElementById("txt2img_neg_prompt").querySelector('textarea')
+
+        if (elme.selectionStart || elme.selectionStart == '0') {
+            var startPos = elme.selectionStart;
+            var endPos = elme.selectionEnd;
+            inputText += ', ';
+
+            elme.value = elme.value.substring(0, startPos)
+                + inputText
+                + elme.value.substring(endPos, elme.value.length);
+
+
+            caretPos = startPos + inputText.length;
+
+            if (elme.selectionStart) {
+                elme.focus();
+                elme.setSelectionRange(caretPos, caretPos);
+            }
+            else {
+                elme.focus();
+            }
+
+
+        }
+    }
 
   removeTag(tag) {
     const id = this.toNegative ? 'txt2img_neg_prompt' : 'txt2img_prompt'
